@@ -27,9 +27,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Payments {
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false)
+	@Column(nullable = false, insertable=false, updatable=false)
 	private Integer order_id;
 	@Enumerated(EnumType.STRING)
 	private Method method;

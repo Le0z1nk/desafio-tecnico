@@ -25,7 +25,7 @@ public class ControllerOrderItems {
 //		return service.AllOrderItems();
 //	}
 	@GetMapping("/{id}")
-	public ResponseEntity<OrderItems> listarPorId(@PathVariable Integer id) {
+	public ResponseEntity<OrderItems> listarPorId(@PathVariable Long id) {
 		return repository.findById(id).map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta)).orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	

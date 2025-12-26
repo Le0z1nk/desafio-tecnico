@@ -5,3 +5,4 @@ public class ModelException extends RuntimeException {
         super(message);
     }
 
+}

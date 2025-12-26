@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de pedidos</title>
-    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="stylesheet" href="static/produtos_styles.css" />
 </head>
+
 <body>
     <header>
         <h1>GESTÃO DE PEDIDOS</h1>
+        <button id="openModal">Cadastrar produto</button>
     </header>
     <main>
-        <button>Cadastrar produto</button>
+        <div id="myModal" class="modal">
+            <div class="modalContent">
+                <span class="close">&times;</span>
+                <h2>Cadastrar Produto</h2>
+                <form class="formProduto">
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="digite o nome">
+                    </div>
+                    <div>
+                        <label>Categoria: </label>
+                        <input type="text"  placeholder="digite a categoria"/>
+                    </div>
+                    <div>
+                        <label for="preco">Preço:</label>
+                        <input type="number" id="preco" name="preco" placeholder="digite o preço">
+                    </div>
+                    <div>
+                        <label>Ativo</label>
+                        <input type="radio" />
+                        <label>Inativo</label>
+                        <input type="radio" />
+                    </div>
+                    <button type="submit" onclick=createProduct()>Salvar</button>
+                </form>
     </main>
+    <script src="modal.js"></script>
+    <script src="conexao.js"></script>
 </body>
+
 </html>

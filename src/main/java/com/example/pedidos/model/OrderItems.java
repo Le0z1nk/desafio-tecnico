@@ -1,6 +1,5 @@
 package com.example.pedidos.model;
 
-import com.example.pedidos.dto.OrderItemsDados;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,7 +10,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,11 +21,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class OrderItems {
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false)
+	@Column(nullable = false, insertable=false, updatable=false)
 	private Integer order_id;
-	@Column(nullable = false)
+	@Column(nullable = false, insertable=false, updatable=false)
 	private Integer product_id;
 	@Column(nullable = false)
 	@Positive

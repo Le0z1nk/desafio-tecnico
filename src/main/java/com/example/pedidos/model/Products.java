@@ -23,7 +23,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Products {
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(nullable = false)
 	private String name;
@@ -36,4 +36,12 @@ public class Products {
 	private Boolean active = true;
 	@OneToMany(mappedBy = "product")
     private List<OrderItems> items;
+	
+	public Products(Long id, String name, String category, Integer price_cents, Boolean active) {
+		this.id = id;
+		this.name = name;
+		this.category = category;
+		this.price_cents = price_cents;
+		this.active = active;
+	}
 }
