@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(61, 148, 255);
+}
+.sectionLogin {
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    justify-content: space-around;
+    height: 35vh;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.form {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+button {
+    font-size: 1.2rem;
+    border: none;
+    background-color: rgb(61, 148, 255);
+    border-radius: 5px;
+    width: 20%;
+    height: 15%;
+    cursor: pointer;
+}
