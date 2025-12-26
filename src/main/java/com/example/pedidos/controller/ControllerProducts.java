@@ -45,7 +45,6 @@ public class ControllerProducts {
 	
 	@PostMapping
 	public ResponseEntity<String> cadastrarProduto(@RequestBody @Valid ProductsDados dados) {
-	    return ResponseEntity.status(HttpStatus.CREATED)
-	                         .body(service.cadastrar(dados));
+	    return ResponseEntity.status(HttpStatus.CREATED).body(service.cadastrar(dados));
 	}
 }

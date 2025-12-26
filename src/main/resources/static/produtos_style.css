@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 header {
@@ -26,6 +27,9 @@ header {
         cursor: pointer;
         width: 15%;
         height: 80%;
+    }
+    button:hover {
+        background-color: rgb(0, 96, 213);
     }
 }
 
@@ -68,15 +72,29 @@ main {
     align-items: center;
     width: 80%;
     height: 70%;
+    button {
+        background-color: rgb(0, 115, 255);
+        color: white;
+        border: none;
+        width: 40%;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        border: solid #000 2px;
+        cursor: pointer;
+        position: relative;
+        top: 1rem;
+    }
+    button:hover {
+        background-color: rgb(0, 96, 213);
+    }
 }
 .close {
     color: #aaa;
-    float: right;
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .close:hover {
-    color: black;
+    color: #000;
 }
