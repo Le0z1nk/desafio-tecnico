@@ -14,13 +14,14 @@ public class OrderItemsService {
 	@Autowired
 	private OrderItemsRepository repository;
 	
-//	public List<OrderItems> AllOrderItems() {
-//		return repository.findAll();
-//	}
+	public List<OrderItems> AllOrderItems() {
+		return repository.findAll();
+	}
 	
 	public String cadastrar(OrderItemsDados dados) {
 		var pedido = new OrderItems(dados.order_id(), dados.product_id(), dados.quantity(), dados.unit_price_cents());
 		repository.save(pedido);
 		return "Cadastro de pedido com sucesso";
 	}
+
 }
