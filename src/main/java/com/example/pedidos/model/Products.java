@@ -10,17 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "Products")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Products {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +33,10 @@ public class Products {
 	@OneToMany(mappedBy = "product")
     private List<OrderItems> items;
 	
+	public Products() {
+		
+	}
+	
 	public Products(Long id, String name, String category, Integer price_cents, Boolean active) {
 		this.id = id;
 		this.name = name;
@@ -44,4 +44,26 @@ public class Products {
 		this.price_cents = price_cents;
 		this.active = active;
 	}
+
+	public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public Integer getPriceCents() {
+        return price_cents;
+    }
 }
+	
+
