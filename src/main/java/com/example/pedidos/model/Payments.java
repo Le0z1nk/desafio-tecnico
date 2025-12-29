@@ -14,11 +14,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import lombok.Setter;
 
 @Entity
 @Table(name = "Payments")
-@Setter
 public class Payments {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

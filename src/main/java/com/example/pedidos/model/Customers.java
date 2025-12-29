@@ -11,11 +11,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
-import lombok.Setter;
 
 @Entity
 @Table(name = "Customers")
-@Setter
 public class Customers {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

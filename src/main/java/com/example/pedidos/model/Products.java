@@ -10,11 +10,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import lombok.Setter;
 
 @Entity
 @Table(name = "Products")
-@Setter
 public class Products {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

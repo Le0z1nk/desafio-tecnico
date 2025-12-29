@@ -16,11 +16,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import lombok.Setter;
 
 @Entity
 @Table(name = "Orders")
-@Setter
 public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
