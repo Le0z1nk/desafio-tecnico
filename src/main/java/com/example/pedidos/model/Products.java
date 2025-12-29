@@ -10,12 +10,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "Products")
-@Getter
 @Setter
 public class Products {
 	@Id

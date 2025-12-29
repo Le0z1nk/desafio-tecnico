@@ -38,8 +38,8 @@ public class ControllerProducts {
 	}
 	
 	@GetMapping("/category/{category}")
-	public ResponseEntity<Products> listarPorCategoria(@PathVariable String category){
-		product = service.findByCategory(category);
+	public ResponseEntity<List<Products>> listarPorCategoria(@PathVariable String category){
+		List<Products> product = service.findByCategory(category);
 		return ResponseEntity.ok(product);
 	}
 	

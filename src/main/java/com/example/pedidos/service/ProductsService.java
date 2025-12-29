@@ -21,9 +21,13 @@ public class ProductsService {
 		return repository.findAll();
 	}
 
-	public Products findByCategory(String category) {
+	public List<Products> findByCategory(String category) {
 		validarCategoria(category);
-		return repository.findByCategory(category).orElseThrow(() -> new ModelException("Categoria não encontrado"));
+		List<Products> product = repository.findByCategory(category);
+		if (product.isEmpty()) {
+			throw new ModelException("Produtos dessa categoria não encontrados");
+		}
+		return product;
 
 	}
 

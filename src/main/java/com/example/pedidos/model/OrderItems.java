@@ -10,15 +10,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Positive;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "Order_Items")
-@Getter
 @Setter
-@NoArgsConstructor
 public class OrderItems {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
