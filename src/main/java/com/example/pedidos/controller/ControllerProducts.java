@@ -43,6 +43,12 @@ public class ControllerProducts {
 		return ResponseEntity.ok(product);
 	}
 	
+	@GetMapping("/name/{name}")
+	public ResponseEntity<List<Products>> listarPorNome(@PathVariable String name) {
+		List<Products> productName = service.findByName(name);
+		return ResponseEntity.ok(productName);
+	}
+	
 	@PostMapping
 	public ResponseEntity<String> cadastrarProduto(@RequestBody @Valid ProductsDados dados) {
 	    return ResponseEntity.status(HttpStatus.CREATED).body(service.cadastrar(dados));

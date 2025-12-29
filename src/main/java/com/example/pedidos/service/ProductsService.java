@@ -25,15 +25,30 @@ public class ProductsService {
 		validarCategoria(category);
 		List<Products> product = repository.findByCategory(category);
 		if (product.isEmpty()) {
-			throw new ModelException("Produtos dessa categoria não encontrados");
+			throw new ModelException("Produtos dessa categoria não foram encontrados");
 		}
 		return product;
 
+	}
+	
+	public List<Products> findByName(String name) {
+		validarNome(name);
+		List<Products> productName = repository.findByName(name);
+		if (productName.isEmpty()) {
+			throw new ModelException("Produtos com esse nome não foram encontrados");
+		}
+		return productName;
 	}
 
 	private void validarCategoria(String category) {
 		if (category.matches(regex)) {
 			throw new ModelException("Categoria inválida. Não pode digitar numeros ou simbolos");
+		}
+	}
+	
+	private void validarNome(String nome) {
+		if (nome.matches(regex)) {
+			throw new ModelException("Nome inálido. Não pode digitar numeros ou símbolos");
 		}
 	}
 

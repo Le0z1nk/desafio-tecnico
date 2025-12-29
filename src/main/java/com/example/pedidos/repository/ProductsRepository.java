@@ -12,4 +12,6 @@ import com.example.pedidos.model.Products;
 public interface ProductsRepository extends JpaRepository<Products, Long>{
 	
 	List<Products> findByCategory(String category);
+	
+	List<Products> findByName(String name);
 }
