@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de pedidos</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cadastro_style.css" />
 </head>
 
 <body>
-    <section class="sectionLogin">
-        <h1>Login</h1>
+    <section class="sectionCadastro">
+        <h1>Cadastro</h1>
 
-        <form class="form">
+        <form class="formCadastro">
             <div class="divInput">
                 <label for="name">Nome:</label>
                 <input id="name" type="text" name="name" placeholder="Digite seu nome" required />
@@ -21,11 +21,9 @@
                 <label for="email">Email:</label>
                 <input id="email" type="email" name="email" placeholder="Digite seu email" required />
             </div>
-            <button type="submit">Entrar</button>
+            <button type="submit">Cadastrar</button>
         </form>
-        <a href="cadastro.html"><p class="cadastro">Não possui conta? Cadastre-se!</p></a>
+        <a href="index.html"><p class="login">Possui uma conta? Fazer Login</p></a>
     </section>
-    <script src="login.js"></script>
+    <script src="cadastro.js"></script>
 </body>
-
-</html>

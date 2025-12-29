@@ -24,7 +24,8 @@ function carregarProdutos(lista) {
         card.innerHTML = `
             <p><strong>${produto.name}</strong></p>
             <p><strong>Categoria:</strong> ${produto.category}</p>
-            <p><strong>Preço:</strong> ${produto.priceCents}</p>
+            <p><strong>Preço:</strong> R$${produto.priceCents},00</p>
+			<p><strong>Ativo:</strong> ${produto.active ? "Sim" : "Não"}</p>
             <button>Comprar</button>
         `
         container.appendChild(card)

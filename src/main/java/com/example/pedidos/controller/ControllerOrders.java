@@ -16,8 +16,6 @@ import com.example.pedidos.service.OrdersService;
 public class ControllerOrders {
 	@Autowired
 	private OrdersService service;
-	@Autowired
-	private OrdersRepository repository;
 	
 	@GetMapping
 	public List<Orders> listarTodosPedidos() {
