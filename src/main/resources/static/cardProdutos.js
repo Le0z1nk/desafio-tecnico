@@ -17,6 +17,7 @@ async function produtosApi() {
 
 function carregarProdutos(lista) {
     const container = document.getElementById("sectionProdutos")
+	const modalPedidos = document.getElementById("modalPedido")
     container.innerHTML = ""
     lista.forEach(produto => {
         const card = document.createElement("div")
@@ -26,8 +27,18 @@ function carregarProdutos(lista) {
             <p><strong>Categoria:</strong> ${produto.category}</p>
             <p><strong>Preço:</strong> R$${produto.priceCents},00</p>
 			<p><strong>Ativo:</strong> ${produto.active ? "Sim" : "Não"}</p>
-            <button>Comprar</button>
         `
+		const buttonComprar = document.createElement("button")
+		buttonComprar.textContent = "Comprar"
+		buttonComprar.addEventListener("click", () => {
+			if (!produto.active) {
+				alert("Não é possível comprar produtos inativos!")
+				return
+			}
+			modalPedidos.style.display = "block"
+			
+		})
+		card.appendChild(buttonComprar)
         container.appendChild(card)
     })
 }
