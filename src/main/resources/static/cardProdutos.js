@@ -1,4 +1,5 @@
 let produtos = []
+let produtoSelecionado = null
 
 async function produtosApi() {
     try {
@@ -35,7 +36,10 @@ function carregarProdutos(lista) {
 				alert("Não é possível comprar produtos inativos!")
 				return
 			}
+			produtoSelecionado = produto
 			modalPedidos.style.display = "block"
+			document.getElementById("quantity").value = ""
+			document.getElementById("precoTotal").textContent = "Preço total: R$ 0,00"
 			
 		})
 		card.appendChild(buttonComprar)
@@ -62,4 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
 			carregarProdutos(resultadoBusca)
 		}
 	})
+})
+
+const inputQuantity = document.getElementById("quantity")
+const precoFinal = document.getElementById("precoTotal")
+inputQuantity.addEventListener("input", () => {
+	
+	if(!produtoSelecionado) {
+		return
+	}
+	
+	const quantity = Number(inputQuantity.value)
+	if (quantity <= 0 || isNaN(quantity)) {
+		precoFinal.textContent = "Preço total: R$ 00,0"
+		return
+	}
+	const total = quantity * produtoSelecionado.priceCents
+	precoFinal.textContent = `Preço total: ${total},00`
 })
